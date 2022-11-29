@@ -22,7 +22,6 @@ class Game : AppCompatActivity() {
         currentScore.text = score.toString()
 
         higherButton.setOnClickListener {
-
             val newCard = drawCard(cardImageView)
             if(newCard > lastCard) {
                 score++
@@ -33,7 +32,9 @@ class Game : AppCompatActivity() {
             currentScore.text = score.toString()
 
             if(score == 10) {
-                currentScore.text = "YOU WON!!!"
+                currentScore.text = "YOU WON!"
+                score=0
+                cardImageView.setImageResource(R.drawable.cardback)
             }
         }
 
@@ -47,10 +48,12 @@ class Game : AppCompatActivity() {
             }
             lastCard = newCard
             currentScore.text = score.toString()
-        }
 
         if(score == 10) {
-            currentScore.text = "YOU WON!!!"
+            currentScore.text = "YOU WON!"
+            score=0
+            cardImageView.setImageResource(R.drawable.cardback)
+        }
         }
     }
 
